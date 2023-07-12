@@ -47,8 +47,11 @@
         app:boxStrokeColor="#32B0A6"
         app:counterEnabled="true"
         app:counterMaxLength="20"
-        app:endIconMode="password_toggle"
+        app:counterTextColor="@color/baseblue"
+        app:endIconMode="clear_text"
+        app:endIconTint="#FFFFFF"
         app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_error"
         app:helperText="Required"
         app:helperTextTextColor="@color/red"
         app:hintTextColor="#32B0A6"
@@ -59,7 +62,7 @@
         app:startIconTint="#32B0A6">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/InputLayout1"
+            android:id="@+id/email_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="21"
@@ -80,8 +83,10 @@
         app:boxStrokeColor="#32B0A6"
         app:counterEnabled="true"
         app:counterMaxLength="20"
-        app:endIconMode="clear_text"
+        app:counterTextColor="@color/baseblue"
+        app:endIconMode="password_toggle"
         app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_error"
         app:helperText="Required"
         app:helperTextTextColor="@color/red"
         app:hintTextColor="#32B0A6"
@@ -94,7 +99,7 @@
         app:startIconTint="#32B0A6">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/InputLayout2"
+            android:id="@+id/password_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -114,26 +119,29 @@
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.797">
+        app:layout_constraintVertical_bias="0.781">
 
-        <Switch
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/reminder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:showText="false"
             android:splitTrack="false"
+            android:theme="@style/SCBSwitch"
             android:thumbTint="#FFFFFF"
-            android:trackTint="#FFFFFF" />
+            android:trackTint="#FFFFFF"
+            app:switchPadding="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Remember Me"
+            android:paddingLeft="20dp"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonToLogin"
         android:layout_width="160dp"
         android:layout_height="51dp"
         android:backgroundTint="#118076"

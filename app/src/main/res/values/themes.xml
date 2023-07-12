@@ -18,4 +18,23 @@
         <item name="boxStrokeColor">#fff</item>
         <item name="boxStrokeWidth">2dp</item>
     </style>
+
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">#46bdbf</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">#ffffff
+        </item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#ffffff
+        </item>
+    </style>
+
+    <style name="InputError" parent="TextAppearance.Design.Error"/>
+    <style name="InputError.Red">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
 </resources>
