@@ -1,5 +1,32 @@
 <resources>
     <string name="app_name">TestUXProject</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="item_name">Reaver Vandal</string>
+    <string name="item_shop">ValShop</string>
+    <string name="item_price">800 Coins</string>
+
+    <string-array name="item_name_txt">
+        <item>Reaver Vandal</item>
+        <item>Ion Operator</item>
+        <item>Prime Axe</item>
+        <item>Oni Phantom</item>
+        <item>Glitchpop Vandal</item>
+    </string-array>
+
+    <string-array name="item_shop_txt">
+        <item>ValShop</item>
+        <item>MelShop</item>
+        <item>JoeShop</item>
+        <item>BenShop</item>
+        <item>KongShop</item>
+    </string-array>
+
+    <string-array name="item_price_txt">
+        <item>800 Coins</item>
+        <item>1400 Coins</item>
+        <item>2000 Coins</item>
+        <item>1000 Coins</item>
+        <item>1200 Coins</item>
+    </string-array>
 </resources>
