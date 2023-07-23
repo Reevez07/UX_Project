@@ -12,6 +12,9 @@
     <color name="blue_text">#34dac7</color>
     <color name="item_container">#2b3534</color>
     <color name="mtrl_textinput_default_box_stroke_color" >#fff</color>
+    <color name="background">#1A1919</color>
+
+
 
 
 </resources>
