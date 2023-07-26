@@ -8,11 +8,34 @@
     tools:context=".DetailPage"
     android:background="@color/background">
 
-    <ImageView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/wallpaperView"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:background="#eeeeee"
-        app:shapeAppearanceOverlay="@style/circular" />
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/border_cardview"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487">
+
+
+        <ImageView
+            android:id="@+id/detailwallpaper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wallpaper_thelastofus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.507"
+            app:srcCompat="@drawable/wallpaper_thelastofus" />
+
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,34 +46,47 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView8"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:layout_gravity="start"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="40dp"
-                android:padding="5dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardPreventCornerOverlap="false"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/circular"
-                app:strokeColor="#797979"
-                app:strokeWidth="5dp"
-                tools:srcCompat="@drawable/valorant_oni_collection_phantom_hd" />
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/imageItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/valorant_oni_collection_phantom_hd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.507" />
+
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="55dp"
+                android:layout_marginLeft="30dp"
                 android:orientation="vertical"
-                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/PageItemName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Nama Item"
+                    android:text="Nama Item"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -79,13 +115,13 @@
         \n\nWith [[ItemName]], you can enjoy the benefits of a budget-friendly game item that still provides a valuable boost to your gaming experience with only [[ItemCoin]] coins, proving that you don't have to spend a fortune to have fun and succeed in the game."
         android:justificationMode="inter_word"
         android:padding="5sp"
-        android:lineSpacingExtra="5dp"
+        android:lineSpacingExtra="3dp"
         />
 
-    <Button
-        android:id="@+id/BuyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+<!--    <Button-->
+<!--        android:id="@+id/BuyButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
 
 
 </LinearLayout>
