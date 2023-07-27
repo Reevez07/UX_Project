@@ -13,10 +13,9 @@ import java.util.ArrayList;
 
 public class ItemPage extends AppCompatActivity {
 
-    ArrayList<ItemGameModel> itemGameModel = new ArrayList<>();
-
-    int[] itemGameImage = {R.drawable.valorant_reaver_collection_vandal_hd, R.drawable.valorant_ion_collection_operator_hd
-    ,R.drawable.valorant_prime_knife_hd,R.drawable.valorant_oni_collection_phantom_hd, R.drawable.valorant_glitchpop_collection_vandal_hd};
+    ArrayList<ItemGameModel> items;
+    String gameName;
+    int gameIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,22 +25,24 @@ public class ItemPage extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_item_page);
 
+        // ngisi item ama game name ama game icon nya
+        items = this.getIntent().getExtras().getParcelableArrayList("Items");
+        gameName = this.getIntent().getExtras().getString("gameName");
+        gameIcon = this.getIntent().getExtras().getInt("gameIcon");
+
+        // set gameName and gameIcon
+        TextView gameNameView = findViewById(R.id.gameName);
+        gameNameView.setText(gameName);
+
+        ImageView gameIconView = findViewById(R.id.gameIcon);
+        gameIconView.setImageResource(gameIcon);
+
+        // repeater
         RecyclerView recyclerView = findViewById(R.id.mRecyclerView);
 
-        setUpItemGameModel();
-
-        IG_RecyclerViewAdapter adapter = new IG_RecyclerViewAdapter(this, itemGameModel);
+        IG_RecyclerViewAdapter adapter = new IG_RecyclerViewAdapter(this, items);
         recyclerView.setAdapter(adapter);
+
         recyclerView.setLayoutManager(new androidx.recyclerview.widget.LinearLayoutManager(this));
-    }
-
-    private void setUpItemGameModel(){
-        String[] itemGameName = getResources().getStringArray(R.array.item_name_txt);
-        String[] itemGameShop = getResources().getStringArray(R.array.item_shop_txt);
-        String[] itemGamePrice = getResources().getStringArray(R.array.item_price_txt);
-
-        for(int i = 0; i < itemGameName.length; i++){
-            itemGameModel.add(new ItemGameModel(itemGameName[i], itemGameShop[i], itemGamePrice[i], itemGameImage[i]));
-        }
     }
 }

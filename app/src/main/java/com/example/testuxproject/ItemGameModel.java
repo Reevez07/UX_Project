@@ -1,6 +1,11 @@
 package com.example.testuxproject;
 
-public class ItemGameModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class ItemGameModel implements Parcelable {
     String itemGameName;
     String itemGameShop;
     String itemGamePrice;
@@ -12,6 +17,25 @@ public class ItemGameModel {
         this.itemGamePrice = itemGamePrice;
         this.itemGameImage = itemGameImage;
     }
+
+    protected ItemGameModel(Parcel in) {
+        itemGameName = in.readString();
+        itemGameShop = in.readString();
+        itemGamePrice = in.readString();
+        itemGameImage = in.readInt();
+    }
+
+    public static final Creator<ItemGameModel> CREATOR = new Creator<ItemGameModel>() {
+        @Override
+        public ItemGameModel createFromParcel(Parcel in) {
+            return new ItemGameModel(in);
+        }
+
+        @Override
+        public ItemGameModel[] newArray(int size) {
+            return new ItemGameModel[size];
+        }
+    };
 
     public String getItemGameName() {
         return itemGameName;
@@ -27,5 +51,18 @@ public class ItemGameModel {
 
     public int getItemGameImage() {
         return itemGameImage;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(itemGameName);
+        dest.writeString(itemGameShop);
+        dest.writeString(itemGamePrice);
+        dest.writeInt(itemGameImage);
     }
 }
