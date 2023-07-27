@@ -7,18 +7,28 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.content.Intent;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.window.SplashScreenView;
 
 import com.example.testuxproject.GlobalData;
+import com.example.testuxproject.MainActivity;
+import com.example.testuxproject.ProfilePage;
 import com.example.testuxproject.R;
-import com.example.testuxproject.homepage.Slide_adapter;
-import com.example.testuxproject.homepage.Slideitem;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -36,6 +46,11 @@ public class HomePage extends AppCompatActivity {
 
     //auto slide
     private Handler slideHandler = new Handler();
+
+//    hamburger button
+    ImageButton menuIcon;
+    AnimatorSet slideDownAnimatorSet;
+    int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +71,22 @@ public class HomePage extends AppCompatActivity {
         String userName = userEmail.substring(0,index);
         GlobalData.userName = userName;
         nameUser.setText(userName);
+
+//        hamburger button
+        menuIcon = findViewById(R.id.button_menu);
+
+        slideDownAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.slide_down);
+        slideDownAnimatorSet.setTarget(R.menu.dropdown_menu_home);
+
+
+
+        menuIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                menuIcon.setImageResource(R.drawable.ic_baseline_close_24);
+                showPopupMenu(view);
+            }
+        });
 
 //        image carousel
         viewPager2 = findViewById(R.id.viewPagerCarousel);
@@ -143,6 +174,49 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+    }
+
+//    dropdown
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view, Gravity.END);
+        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu_home, popupMenu.getMenu());
+
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_profile:
+                        navigateToProfile();
+                        return true;
+                    case R.id.menu_logout:
+                        navigateToLogout();
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        slideDownAnimatorSet.start();
+        popupMenu.show();
+
+        // Change background color when the dropdown is shown
+    //        mainLayout.setBackgroundColor(Color.parseColor("#800080")); // Purple color with 50% opacity
+    }
+
+    private void navigateToLogout() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void navigateToProfile() {
+        Intent intent = new Intent(this, ProfilePage.class);
+        startActivity(intent);
+    }
+
+    private void navigateToHome() {
+        Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
     }
 
 //    image carousel

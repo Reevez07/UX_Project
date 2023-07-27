@@ -26,6 +26,8 @@ public class GlobalData {
 
 
     public static void init(){
+        if (!games.isEmpty()) return;
+
 //        mobile legend
         GameItems mobilelegend = new GameItems(R.drawable.wallpaper_mobilelegend, R.drawable.mobilelegend_logo, "Mobile Legend", 4.4, "Action", "mobile");
         mobilelegend.getItems().add(new ItemGameModel("Blade of Despair", "DonShop", "1500", R.drawable.mobilelegend_bladeofdespair));
