@@ -1,7 +1,6 @@
 package com.example.testuxproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.content.res.AppCompatResources;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -14,11 +13,9 @@ import android.view.WindowManager;
 import android.text.Editable;
 import android.widget.Button;
 
+import com.example.testuxproject.homepage.HomePage;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class LoginPage extends AppCompatActivity {
 
