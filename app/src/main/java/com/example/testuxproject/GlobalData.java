@@ -12,6 +12,7 @@ public class GlobalData {
     public static String userName;
     public static ArrayList<GameItems> games = new ArrayList<>();
 
+//    filter
     public static ArrayList<GameItems> filterGameByType (String type) {
         ArrayList<GameItems> filtered = new ArrayList<>();
         for (GameItems game: games) {
