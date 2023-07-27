@@ -76,7 +76,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="45dp"
                 android:layout_marginLeft="30dp"
                 android:orientation="vertical"
                 app:layout_constraintStart_toEndOf="@+id/cardView"
@@ -86,6 +86,7 @@
                     android:id="@+id/PageItemName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="Nama Item"
                     android:textColor="@color/white"
                     android:textSize="20sp"
@@ -95,7 +96,8 @@
                     android:id="@+id/PageItemCoin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginTop="3dp"
                     android:text="Coins"
                     android:textColor="@color/blue_text"
                     android:textSize="15sp"
@@ -109,7 +111,8 @@
         android:id="@+id/Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
+        android:layout_marginHorizontal="35dp"
+        android:fontFamily="@font/poppins_regular"
         android:textColor="#D7D7D7"
         android:text="[[ItemName]] is a remarkable game item that offers an incredible array of features and benefits to players in diverse gaming universes. With its exceptional qualities, this item has become a highly sought-after asset among gamers.
         \n\nWith [[ItemName]], you can enjoy the benefits of a budget-friendly game item that still provides a valuable boost to your gaming experience with only [[ItemCoin]] coins, proving that you don't have to spend a fortune to have fun and succeed in the game."
@@ -119,9 +122,27 @@
         />
 
 <!--    <Button-->
-<!--        android:id="@+id/BuyButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"/>-->
+<!--        android:id="@+id/Buybutton"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@drawable/button_color_radius"-->
+<!--        android:text="Button"-->
+<!--        android:backgroundTint="@color/hijauButton"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:rippleColor="#FFFFFF" />-->
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Buybutton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Button"
+        app:backgroundTint="@color/hijauButton"
+        app:cornerRadius="15dp"
+        android:textColor="@color/white"
+        app:rippleColor="#FFFFFF"/>
 
 </LinearLayout>
