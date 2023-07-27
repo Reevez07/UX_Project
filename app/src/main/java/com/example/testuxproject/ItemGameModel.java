@@ -11,11 +11,22 @@ public class ItemGameModel implements Parcelable {
     String itemGamePrice;
     int itemGameImage;
 
-    public ItemGameModel(String itemGameName, String itemGameShop, String itemGamePrice, int itemGameImage) {
+    public String getItemGameDesc() {
+        return itemGameDesc;
+    }
+
+    public void setItemGameDesc(String itemGameDesc) {
+        this.itemGameDesc = itemGameDesc;
+    }
+
+    String itemGameDesc;
+
+    public ItemGameModel(String itemGameName, String itemGameShop, String itemGamePrice, int itemGameImage, String itemGameDesc) {
         this.itemGameName = itemGameName;
         this.itemGameShop = itemGameShop;
         this.itemGamePrice = itemGamePrice;
         this.itemGameImage = itemGameImage;
+        this.itemGameDesc = itemGameDesc;
     }
 
     protected ItemGameModel(Parcel in) {
@@ -23,6 +34,7 @@ public class ItemGameModel implements Parcelable {
         itemGameShop = in.readString();
         itemGamePrice = in.readString();
         itemGameImage = in.readInt();
+        itemGameDesc = in.readString();
     }
 
     public static final Creator<ItemGameModel> CREATOR = new Creator<ItemGameModel>() {

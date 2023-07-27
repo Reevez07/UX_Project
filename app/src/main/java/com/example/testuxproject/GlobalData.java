@@ -10,6 +10,7 @@ public class GlobalData {
     public static String userEmail = "rere@gmail.com";
     public static String userPassword = "12345678";
     public static String userName;
+
     public static ArrayList<GameItems> games = new ArrayList<>();
 
 //    filter
@@ -27,8 +28,7 @@ public class GlobalData {
     public static void init(){
 //        mobile legend
         GameItems mobilelegend = new GameItems(R.drawable.wallpaper_mobilelegend, R.drawable.wallpaper_mobilelegend, "Mobile Legend", 4.4, "Action", "mobile");
-        mobilelegend.getItems().add(new ItemGameModel("Blade of Despair", "DonShop", "1500", R.drawable.wallpaper_mobilelegend));
-
+        mobilelegend.getItems().add(new ItemGameModel("Blade of Despair", "DonShop", "1500", R.drawable.mobilelegend_bladeofdespair, "coba coba anjay"));
         games.add(mobilelegend);
 //        coc
 //        pubg

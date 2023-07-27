@@ -1,6 +1,8 @@
 package com.example.testuxproject.homepage;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,8 +40,18 @@ public class Home_game_adapter extends RecyclerView.Adapter<Home_game_adapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.gameImage1.setImageResource(games.get(position).getGameImage1());
-        holder.gameImage2.setImageResource(games.get(position).getGameImage2());
+        int size = 10;
+
+        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), games.get(position).getGameImage1());
+        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
+        originalBitmap.recycle();
+
+        Bitmap image2 = BitmapFactory.decodeResource(context.getResources(), games.get(position).getGameImage2());
+        Bitmap resized2 = Bitmap.createScaledBitmap(image2, image2.getWidth() / size, image2.getHeight() / size, true);
+        image2.recycle();
+
+        holder.gameImage1.setImageBitmap(resized);
+        holder.gameImage2.setImageBitmap(resized2);
         holder.gameName.setText(games.get(position).getGameName());
         holder.gameGenre.setText(games.get(position).getGameGenre());
         holder.gameRating.setText(games.get(position).getGameRating().toString());
