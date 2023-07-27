@@ -28,7 +28,7 @@ public class GlobalData {
     public static void init(){
 //        mobile legend
         GameItems mobilelegend = new GameItems(R.drawable.wallpaper_mobilelegend, R.drawable.wallpaper_mobilelegend, "Mobile Legend", 4.4, "Action", "mobile");
-        mobilelegend.getItems().add(new ItemGameModel("Blade of Despair", "DonShop", "1500", R.drawable.mobilelegend_bladeofdespair, "coba coba anjay"));
+        mobilelegend.getItems().add(new ItemGameModel("Blade of Despair", "DonShop", "1500", R.drawable.mobilelegend_bladeofdespair));
         games.add(mobilelegend);
 //        coc
 //        pubg

@@ -12,21 +12,18 @@ public class ItemGameModel implements Parcelable {
     int itemGameImage;
 
     public String getItemGameDesc() {
-        return itemGameDesc;
+        return  itemGameName + " is a remarkable game item that offers an " +
+                "incredible array of features and benefits to players in diverse gaming universes. With its exceptional qualities, this " +
+                "item has become a highly sought-after asset among gamers.\n" + "With " + itemGameName +
+                " you can enjoy the benefits of a budget-friendly game item that still provides a valuable boost to your gaming experience with only "
+                + itemGamePrice + " coins, proving that you don't have to spend a fortune to have fun and succeed in the game.";
     }
 
-    public void setItemGameDesc(String itemGameDesc) {
-        this.itemGameDesc = itemGameDesc;
-    }
-
-    String itemGameDesc;
-
-    public ItemGameModel(String itemGameName, String itemGameShop, String itemGamePrice, int itemGameImage, String itemGameDesc) {
+    public ItemGameModel(String itemGameName, String itemGameShop, String itemGamePrice, int itemGameImage) {
         this.itemGameName = itemGameName;
         this.itemGameShop = itemGameShop;
         this.itemGamePrice = itemGamePrice;
         this.itemGameImage = itemGameImage;
-        this.itemGameDesc = itemGameDesc;
     }
 
     protected ItemGameModel(Parcel in) {
@@ -34,7 +31,6 @@ public class ItemGameModel implements Parcelable {
         itemGameShop = in.readString();
         itemGamePrice = in.readString();
         itemGameImage = in.readInt();
-        itemGameDesc = in.readString();
     }
 
     public static final Creator<ItemGameModel> CREATOR = new Creator<ItemGameModel>() {
@@ -64,6 +60,8 @@ public class ItemGameModel implements Parcelable {
     public int getItemGameImage() {
         return itemGameImage;
     }
+
+
 
     @Override
     public int describeContents() {
