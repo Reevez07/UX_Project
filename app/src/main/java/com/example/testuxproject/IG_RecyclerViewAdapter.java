@@ -34,7 +34,7 @@ public class IG_RecyclerViewAdapter extends RecyclerView.Adapter<IG_RecyclerView
     public void onBindViewHolder(@NonNull IG_RecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.textViewName.setText(itemGameModel.get(position).getItemGameName());
         holder.textViewShop.setText(itemGameModel.get(position).getItemGameShop());
-        holder.textViewPrice.setText(itemGameModel.get(position).getItemGamePrice());
+        holder.textViewPrice.setText(itemGameModel.get(position).getItemGamePrice() + " Coins");
         holder.imageView.setImageResource(itemGameModel.get(position).getItemGameImage());
     }
 

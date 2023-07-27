@@ -1,24 +1,34 @@
 package com.example.testuxproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.testuxproject.homepage.GameItems;
+import com.example.testuxproject.homepage.HomeInterface;
+import com.example.testuxproject.homepage.Home_game_adapter;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link fragment_mobile#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_mobile extends Fragment {
+public class fragment_mobile extends Fragment implements HomeInterface {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    ArrayList<GameItems> games = GlobalData.filterGameByType("Mobile");
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -59,6 +69,28 @@ public class fragment_mobile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mobile, container, false);
+        View view = inflater.inflate(R.layout.fragment_mobile, container, false);
+
+        RecyclerView recyclerView = view.findViewById(R.id.home_rv);
+
+        Home_game_adapter adapter = new Home_game_adapter(view.getContext(), games, this);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
+
+        return view;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), ItemPage.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("Items", games.get(position).getItems());
+        bundle.putString("gameName", games.get(position).getGameName());
+        bundle.putInt("gameIcon", games.get(position).getGameImage2());
+
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

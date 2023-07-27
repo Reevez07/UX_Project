@@ -31,8 +31,12 @@ public class ItemPage extends AppCompatActivity {
         gameIcon = this.getIntent().getExtras().getInt("gameIcon");
 
         // set gameName and gameIcon
-        TextView gameNameField = findViewById(R.id.)
+        TextView gameNameView = findViewById(R.id.gameName);
+        gameNameView.setText(gameName);
 
+        ImageView gameIconView = findViewById(R.id.gameIcon);
+        gameIconView.setImageResource(gameIcon);
+        
         // repeater
         RecyclerView recyclerView = findViewById(R.id.mRecyclerView);
 

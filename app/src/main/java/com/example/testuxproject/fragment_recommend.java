@@ -32,8 +32,7 @@ public class fragment_recommend extends Fragment implements HomeInterface {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    ArrayList<GameItems> games = GlobalData.filterGameByType("Mobile");
-
+    ArrayList<GameItems> games = GlobalData.filterGameByType("Recommend");
 
     public fragment_recommend() {
         // Required empty public constructor
@@ -93,8 +92,6 @@ public class fragment_recommend extends Fragment implements HomeInterface {
         bundle.putInt("gameIcon", games.get(position).getGameImage2());
 
         intent.putExtras(bundle);
-
-
         startActivity(intent);
     }
 }
