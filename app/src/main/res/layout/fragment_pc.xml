@@ -5,15 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment_pc">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PC"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/white"
-
-        />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_rv"
         android:layout_width="match_parent"

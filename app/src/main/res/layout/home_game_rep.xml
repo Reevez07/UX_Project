@@ -2,12 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="160dp"
-    android:layout_height="166dp">
+    android:layout_width="150dp"
+    android:layout_height="166dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginVertical="10dp"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:backgroundTint="#202020"
         app:cardCornerRadius="15dp"
@@ -17,64 +20,92 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/imageRep1"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="104dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/foto1"
-            app:riv_corner_radius="15dp" />
+            android:layout_height="match_parent">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/imageRep2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="115dp"
-            android:src="@drawable/valorant_logo_fab2ca0e55_seeklogo_com"
-            app:riv_corner_radius="10dp" />
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageRep1"
+                android:layout_width="match_parent"
+                android:layout_height="98dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/foto1"
+                app:riv_corner_radius="15dp" />
 
-        <TextView
-            android:id="@+id/gamename"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="115dp"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:text="Game name"
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageRep2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/valorant_logo_fab2ca0e55_seeklogo_com"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.285"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageRep1"
+                app:layout_constraintVertical_bias="0.428"
+                app:riv_corner_radius="10dp" />
 
-            android:textColor="@color/white"
-            android:textSize="12dp" />
+            <TextView
+                android:id="@+id/gamename"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="10dp"
 
-        <TextView
-            android:id="@+id/gamegenre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="135dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Genre"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="The Last of Us"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageRep2"
+                app:layout_constraintTop_toBottomOf="@+id/imageRep1" />
 
-            android:textColor="#00BFBF"
-            android:textSize="12dp" />
+            <TextView
+                android:id="@+id/gamegenre"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/poppins_medium"
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginStart="56dp"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+                android:text="Role-play"
+                android:textColor="#00BFBF"
+                android:textSize="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gamename"
+                app:layout_constraintVertical_bias="0.16" />
 
-        <TextView
-            android:id="@+id/rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="135dp"
-            android:text="4.5"
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/gamegenre"
+                app:layout_constraintHorizontal_bias="0.094"
+                app:layout_constraintStart_toEndOf="@+id/imageRep2"
+                app:layout_constraintTop_toBottomOf="@+id/gamename"
+                app:layout_constraintVertical_bias="0.125"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
 
-            android:textColor="@color/white"
-            android:textSize="12dp" />
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="4dp"
+                android:text="4.5"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/gamegenre"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toBottomOf="@+id/gamename"
+                app:layout_constraintVertical_bias="0.12" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
