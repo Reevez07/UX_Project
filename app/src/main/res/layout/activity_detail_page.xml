@@ -18,32 +18,55 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/wallpaperView"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:background="@drawable/border_cardview"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp"
-                app:cardPreventCornerOverlap="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.487">
+                android:layout_height="match_parent">
 
-
-                <ImageView
-                    android:id="@+id/detailwallpaper"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/wallpaperView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/border_cardview"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    app:cardPreventCornerOverlap="false"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.507" />
+                    app:layout_constraintVertical_bias="0.487">
 
-            </androidx.cardview.widget.CardView>
+
+                    <ImageView
+                        android:id="@+id/detailwallpaper"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/border_detailcarview"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.507" />
+
+                    <ImageView
+                        android:id="@+id/backBtn"
+                        android:layout_width="34dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="28dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.08"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_back" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </FrameLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,6 +96,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
+                            android:background="@drawable/border_detailcarview"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="  parent"
@@ -134,9 +158,10 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Buy"
                 app:backgroundTint="@color/hijauButton"
-                app:cornerRadius="15dp"
+                app:cornerRadius="20dp"
                 android:textColor="@color/white"
                 app:rippleColor="#FFFFFF"/>
 

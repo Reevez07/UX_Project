@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents"
     android:background="@drawable/dialog_bg">
 
     <TextView
@@ -37,13 +38,12 @@
                 android:layout_width="333dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="30dp"
                 android:text="Email"
                 android:textColor="@color/white"
                 android:fontFamily="@font/poppins_medium"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.47"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,17 +51,16 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="330dp"
                 android:layout_height="46dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="32dp"
                 android:background="@drawable/border_gradient_transparant"
+                android:fontFamily="@font/poppins_regular"
                 android:hint="Please insert your email"
                 android:paddingStart="10dp"
-                android:textSize="14dp"
                 android:textColorHint="@color/white"
-                android:fontFamily="@font/poppins_regular"
+                android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/FormLabelEmail" />
 
@@ -84,15 +83,15 @@
                 android:id="@+id/editTextUsername"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="30dp"
-                android:paddingStart="10dp"
-                android:textSize="14dp"
-                android:textColorHint="@color/white"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/border_gradient_transparant"
                 android:fontFamily="@font/poppins_regular"
                 android:hint="Please insert your username"
-                android:background="@drawable/border_gradient_transparant"
+                android:paddingStart="10dp"
+                android:textColorHint="@color/white"
+                android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/FormLabelUsername" />
@@ -112,7 +111,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
-            <com.google.android.material.button.MaterialButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/StepperMinus"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -120,22 +119,20 @@
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"
-                android:background="@drawable/rounded_button"
-                android:padding="0dp"
-                android:paddingBottom="2dp"
+                android:background="@drawable/stepperbutton"
+                android:paddingTop="2dp"
                 android:text="-"
-                android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Quantity" />
 
             <TextView
                 android:id="@+id/StepperText"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
                 android:padding="3dp"
-                android:text="2000000"
+                android:text="1"
                 android:background="@drawable/steppercontainer"
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_semi_bold"
@@ -145,7 +142,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/Quantity" />
 
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/StepperPlus"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -153,193 +150,107 @@
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"
-                android:background="@drawable/rounded_button"
-                android:padding="0dp"
+                android:background="@drawable/stepperbutton"
+                android:paddingTop="2dp"
                 android:text="+"
                 app:layout_constraintStart_toEndOf="@+id/StepperText"
                 app:layout_constraintTop_toBottomOf="@+id/Quantity" />
-
-            <LinearLayout
-                android:id="@+id/GameNameLayout"
-                android:layout_width="333dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="30dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/StepperPlus">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="33dp"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/GameNameText"
-                        android:layout_width="151dp"
-                        android:layout_height="19dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_weight="1"
-                        android:text="Game Name"
-                        android:fontFamily="@font/poppins_light"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.529" />
-
-                    <TextView
-                        android:id="@+id/GameNameValue"
-                        android:layout_width="151dp"
-                        android:layout_height="19dp"
-                        android:layout_weight="1"
-                        android:text="TextView"
-                        android:gravity="end"
-                        android:fontFamily="@font/poppins_medium"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.571" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="30dp"
-                android:layout_weight="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/GameNameLayout">
-
-                <LinearLayout
-                    android:id="@+id/AccBalanceLayout"
-                    android:layout_width="333dp"
-                    android:layout_height="34dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <TextView
-                            android:id="@+id/AccBalanceText"
-                            android:layout_width="151dp"
-                            android:layout_height="19dp"
-                            android:layout_marginStart="4dp"
-                            android:layout_weight="1"
-                            android:text="Acc Balance"
-                            android:fontFamily="@font/poppins_light"
-                            android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.529" />
-
-                        <TextView
-                            android:id="@+id/AccBalanceValue"
-                            android:layout_width="151dp"
-                            android:layout_height="19dp"
-                            android:layout_weight="1"
-                            android:text="TextView"
-                            android:gravity="end"
-                            android:fontFamily="@font/poppins_medium"
-                            android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.571" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="30dp"
-                android:layout_weight="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-                <LinearLayout
-                    android:id="@+id/TotalPaymentLayout"
-                    android:layout_width="333dp"
-                    android:layout_height="34dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <TextView
-                            android:id="@+id/TotalPaymentText"
-                            android:layout_width="151dp"
-                            android:layout_height="19dp"
-                            android:layout_marginStart="4dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/poppins_bold"
-                            android:text="Total Payment"
-                            android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.529" />
-
-                        <TextView
-                            android:id="@+id/TotalPaymentValue"
-                            android:layout_width="151dp"
-                            android:layout_height="19dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/poppins_bold"
-                            android:gravity="end"
-                            android:text="TextView"
-                            android:textColor="@color/blue_text"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.571" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/PayButton"
                 android:layout_width="200dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="Pay"
+                android:layout_marginTop="52dp"
                 android:backgroundTint="@color/hijauButton"
-                app:cornerRadius="15dp"
+                android:text="Pay"
                 android:textColor="@color/white"
-                app:rippleColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:cornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+                app:layout_constraintTop_toBottomOf="@+id/TotalPaymentText"
+                app:rippleColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/GameNameText"
+                android:layout_width="151dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="72dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_light"
+                android:text="Game Name"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Quantity" />
+
+            <TextView
+                android:id="@+id/GameNameValue"
+                android:layout_width="151dp"
+                android:layout_height="19dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="TextView"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Quantity" />
+
+            <TextView
+                android:id="@+id/AccBalanceText"
+                android:layout_width="151dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_light"
+                android:text="Acc Balance"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GameNameText" />
+
+            <TextView
+                android:id="@+id/AccBalanceValue"
+                android:layout_width="151dp"
+                android:layout_height="19dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="TextView"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GameNameValue" />
+
+            <TextView
+                android:id="@+id/TotalPaymentText"
+                android:layout_width="151dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Total Payment"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AccBalanceText" />
+
+            <TextView
+                android:id="@+id/TotalPaymentValue"
+                android:layout_width="151dp"
+                android:layout_height="19dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="end"
+                android:text="TextView"
+                android:textColor="@color/blue_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AccBalanceValue" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

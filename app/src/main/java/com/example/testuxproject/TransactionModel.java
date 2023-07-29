@@ -61,9 +61,7 @@ public class TransactionModel implements Parcelable {
         return itemPrice;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
+    public String getQuantity() { return quantity.toString() + " pc(s)"; }
 
     @Override
     public int describeContents() {
