@@ -46,6 +46,7 @@
             android:name=".ProfilePage"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents"
+            android:windowSoftInputMode="adjustResize"
             />
 
     </application>
