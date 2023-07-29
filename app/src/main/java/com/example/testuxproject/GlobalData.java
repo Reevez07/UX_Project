@@ -7,7 +7,7 @@ import com.example.testuxproject.homepage.GameItems;
 import java.util.ArrayList;
 
 public class GlobalData {
-    public static String userEmail = "rere@gmail.com";
+    public static String userEmail = "rereaja@gmail.com";
     public static String userPassword = "12345678";
     public static String userName;
 
@@ -154,55 +154,43 @@ public class GlobalData {
 
 //        mobile legend
         GameItems mobilelegendRecom = new GameItems(R.drawable.wallpaper_mobilelegend, R.drawable.mobilelegend_logo, "Mobile Legend", 4.4, "Action", "recommend");
-        mobilelegend.getItems().add(new ItemGameModel("Blade of Despair", "DonShop", "1500", R.drawable.mobilelegend_bladeofdespair));
-        mobilelegend.getItems().add(new ItemGameModel("Bloodlust Axe", "PolShop", "800", R.drawable.mobilelegend_bloodlustaxe));
-        mobilelegend.getItems().add(new ItemGameModel("Athena Shield", "JingShop", "1000", R.drawable.mobilelegend_athenashield));
-        mobilelegend.getItems().add(new ItemGameModel("Antique Curasss", "BonShop", "1200", R.drawable.mobilelegend_antiquecurass));
-        mobilelegend.getItems().add(new ItemGameModel("Holy Crystal", "LingShop", "800", R.drawable.mobilelegend_holycrystal));
+        mobilelegendRecom.getItems().add(new ItemGameModel("Blade of Despair", "DonShop", "1500", R.drawable.mobilelegend_bladeofdespair));
+        mobilelegendRecom.getItems().add(new ItemGameModel("Bloodlust Axe", "PolShop", "800", R.drawable.mobilelegend_bloodlustaxe));
+        mobilelegendRecom.getItems().add(new ItemGameModel("Athena Shield", "JingShop", "1000", R.drawable.mobilelegend_athenashield));
+        mobilelegendRecom.getItems().add(new ItemGameModel("Antique Curasss", "BonShop", "1200", R.drawable.mobilelegend_antiquecurass));
+        mobilelegendRecom.getItems().add(new ItemGameModel("Holy Crystal", "LingShop", "800", R.drawable.mobilelegend_holycrystal));
         games.add(mobilelegendRecom);
 
 //        the last of us
         GameItems thelastofusRecom = new GameItems(R.drawable.wallpaper_thelastofus, R.drawable.thelastofus_logo, "The Last of Us", 4.6, "Survival", "recommend");
-        thelastofus.getItems().add(new ItemGameModel("Fly Rise Shirt","GonShop","800",R.drawable.thelastofus_flyriseshirt));
-        thelastofus.getItems().add(new ItemGameModel("Fire Rise Hoodie","KunShop","800",R.drawable.thelastofus_firerisehoodie));
-        thelastofus.getItems().add(new ItemGameModel("Antique Silver","GenShop","1000",R.drawable.thelastofus_antiquesilver));
+        thelastofusRecom.getItems().add(new ItemGameModel("Fly Rise Shirt","GonShop","800",R.drawable.thelastofus_flyriseshirt));
+        thelastofusRecom.getItems().add(new ItemGameModel("Fire Rise Hoodie","KunShop","800",R.drawable.thelastofus_firerisehoodie));
+        thelastofusRecom.getItems().add(new ItemGameModel("Antique Silver","GenShop","1000",R.drawable.thelastofus_antiquesilver));
         games.add(thelastofusRecom);
 
 //        pubg
         GameItems pubgRecom = new GameItems(R.drawable.wallpaper_pubg, R.drawable.pubg_logo, "PUBG", 4.3, "Strategy", "recommend");
-        pubg.getItems().add(new ItemGameModel("Black Knight","PopShop","400",R.drawable.pubg_blackknight));
-        pubg.getItems().add(new ItemGameModel("Lady of Blood","KoiShop","800",R.drawable.pubg_ladyofblood));
-        pubg.getItems().add(new ItemGameModel("Modern Low","BenzShop","1000",R.drawable.pubg_modernlow));
+        pubgRecom.getItems().add(new ItemGameModel("Black Knight","PopShop","400",R.drawable.pubg_blackknight));
+        pubgRecom.getItems().add(new ItemGameModel("Lady of Blood","KoiShop","800",R.drawable.pubg_ladyofblood));
+        pubgRecom.getItems().add(new ItemGameModel("Modern Low","BenzShop","1000",R.drawable.pubg_modernlow));
         games.add(pubgRecom);
 
 //        fortnite
         GameItems fortniteRecom = new GameItems(R.drawable.wallpaper_fortnite, R.drawable.fortnite_logo, "Fornite", 3.6, "Action", "recommend");
-        fortnite.getItems().add(new ItemGameModel("Finfin Flair","KolShop","600",R.drawable.fortnite_finfinflair));
-        fortnite.getItems().add(new ItemGameModel("Brite Star","DolShop","800",R.drawable.fortnite_britestar));
-        fortnite.getItems().add(new ItemGameModel("Freshly Forged","TelShop","400",R.drawable.fortnite_freshlyforged));
-        fortnite.getItems().add(new ItemGameModel("Brave and Brite","YoonaShop","500",R.drawable.fortnite_braveandbrite));
-        fortnite.getItems().add(new ItemGameModel("Pickross Bow","JinShop","1000",R.drawable.fortnite_pickrossbow));
+        fortniteRecom.getItems().add(new ItemGameModel("Finfin Flair","KolShop","600",R.drawable.fortnite_finfinflair));
+        fortniteRecom.getItems().add(new ItemGameModel("Brite Star","DolShop","800",R.drawable.fortnite_britestar));
+        fortniteRecom.getItems().add(new ItemGameModel("Freshly Forged","TelShop","400",R.drawable.fortnite_freshlyforged));
+        fortniteRecom.getItems().add(new ItemGameModel("Brave and Brite","YoonaShop","500",R.drawable.fortnite_braveandbrite));
+        fortniteRecom.getItems().add(new ItemGameModel("Pickross Bow","JinShop","1000",R.drawable.fortnite_pickrossbow));
         games.add(fortniteRecom);
 
 //        genshin impact
         GameItems genshinimpactRecom = new GameItems(R.drawable.wallpaper_genshinimpact, R.drawable.genshin_logo, "Genshin Impact", 4.4, "Role-play", "recommend");
-        genshinimpact.getItems().add(new ItemGameModel("60 Crystal","FunShop","300",R.drawable.genshin_crystal));
-        genshinimpact.getItems().add(new ItemGameModel("300 Crystal","WibuShop","800",R.drawable.genshin_crystal));
-        genshinimpact.getItems().add(new ItemGameModel("1000 Crystal","AraShop","1000",R.drawable.genshin_crystal));
-        genshinimpact.getItems().add(new ItemGameModel("3000 Crystal","AnaShop","1200",R.drawable.genshin_crystal));
-        genshinimpact.getItems().add(new ItemGameModel("6000 Crystal","DollShop","1500",R.drawable.genshin_crystal));
+        genshinimpactRecom.getItems().add(new ItemGameModel("60 Crystal","FunShop","300",R.drawable.genshin_crystal));
+        genshinimpactRecom.getItems().add(new ItemGameModel("300 Crystal","WibuShop","800",R.drawable.genshin_crystal));
+        genshinimpactRecom.getItems().add(new ItemGameModel("1000 Crystal","AraShop","1000",R.drawable.genshin_crystal));
+        genshinimpactRecom.getItems().add(new ItemGameModel("3000 Crystal","AnaShop","1200",R.drawable.genshin_crystal));
+        genshinimpactRecom.getItems().add(new ItemGameModel("6000 Crystal","DollShop","1500",R.drawable.genshin_crystal));
         games.add(genshinimpactRecom);
-
-
-
-
-
-
-
-
-
-
     }
-
-
 }

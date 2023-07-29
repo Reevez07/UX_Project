@@ -1,6 +1,7 @@
 package com.example.testuxproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 public class ItemPage extends AppCompatActivity {
 
-    ArrayList<ItemGameModel> items;
+    ArrayList<ItemGameModel> Items;
     String gameName;
     int gameIcon;
 
@@ -26,7 +27,7 @@ public class ItemPage extends AppCompatActivity {
         setContentView(R.layout.activity_item_page);
 
         // ngisi item ama game name ama game icon nya
-        items = this.getIntent().getExtras().getParcelableArrayList("Items");
+        Items = this.getIntent().getExtras().getParcelableArrayList("Items");
         gameName = this.getIntent().getExtras().getString("gameName");
         gameIcon = this.getIntent().getExtras().getInt("gameIcon");
 
@@ -40,9 +41,9 @@ public class ItemPage extends AppCompatActivity {
         // repeater
         RecyclerView recyclerView = findViewById(R.id.mRecyclerView);
 
-        IG_RecyclerViewAdapter adapter = new IG_RecyclerViewAdapter(this, items);
+        IG_RecyclerViewAdapter adapter = new IG_RecyclerViewAdapter(this, Items);
         recyclerView.setAdapter(adapter);
 
-        recyclerView.setLayoutManager(new androidx.recyclerview.widget.LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

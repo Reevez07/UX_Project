@@ -78,8 +78,6 @@ public class HomePage extends AppCompatActivity {
         slideDownAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.slide_down);
         slideDownAnimatorSet.setTarget(R.menu.dropdown_menu_home);
 
-
-
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,8 +108,6 @@ public class HomePage extends AppCompatActivity {
             public void transformPage(@NonNull View page, float position) {
                 float r = 1- Math.abs(position);
                 page.setScaleY(0.85f + r*0.15f);
-
-
             }
         });
 
@@ -186,6 +182,9 @@ public class HomePage extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
+                    case R.id.menu_home:
+                        navigateToHome();
+                        return true;
                     case R.id.menu_profile:
                         navigateToProfile();
                         return true;
