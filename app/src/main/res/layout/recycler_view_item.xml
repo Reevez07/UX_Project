@@ -55,7 +55,8 @@
                 android:id="@+id/itemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
+                android:layout_marginStart="44dp"
+                android:fontFamily="@font/poppins_bold"
                 android:text="@string/item_name"
                 android:textColor="@color/blue_text"
                 android:textSize="16sp"
@@ -63,18 +64,20 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.26" />
+                app:layout_constraintVertical_bias="0.212" />
 
             <TextView
                 android:id="@+id/itemShop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="54dp"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/item_shop"
                 android:textColor="@color/white"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toStartOf="@+id/cardView"
-                app:layout_constraintHorizontal_bias="0.013"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,13 +86,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="90dp"
-                android:background="@drawable/itemrectangle"
-                android:padding="8dp"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/border_gradient_item"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:paddingLeft="20dp"
+                android:paddingTop="3dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="3dp"
                 android:text="@string/item_price"
                 android:textColor="@color/white"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toStartOf="@+id/cardView"
-                app:layout_constraintHorizontal_bias="0.236"
+                app:layout_constraintHorizontal_bias="0.281"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
