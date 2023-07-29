@@ -46,17 +46,28 @@ public class LoginPage extends AppCompatActivity {
                 GlobalData.userEmail = email;
                 GlobalData.userPassword = password;
 
-                if (email.isEmpty() || !email.contains("@") || !email.endsWith(".com")) {
+                if (email.isEmpty()) {
                     isValid = false;
-                    layoutEmail.setError("Invalid email");
-                } else {
+                    layoutEmail.setError("Email must be filled!");
+                }else if(!email.contains("@")){
+                    isValid = false;
+                    layoutEmail.setError("Email must contain '@'");
+                }else if(!email.endsWith(".com")){
+                    isValid = false;
+                    layoutEmail.setError("Email must end with .com");
+                }
+                else {
                     layoutEmail.setError(null);
                 }
 
-                if (password.isEmpty() || password.length() < 8) {
+                if (password.isEmpty()) {
                     isValid = false;
-                    layoutPassword.setError("Invalid password");
-                } else {
+                    layoutPassword.setError("Password must be filled!");
+                }else if(password.length() < 8){
+                    isValid = false;
+                    layoutPassword.setError("Password must contain at least 8 characters");
+                }
+                else {
                     layoutPassword.setError(null);
                 }
 
