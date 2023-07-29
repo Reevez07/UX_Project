@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -70,7 +71,7 @@ public class transaction extends Fragment implements HomeInterface {
         TransactionRecyclerViewAdapter adapter = new TransactionRecyclerViewAdapter(view.getContext(), transactions, this);
 
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
         return view;
     }

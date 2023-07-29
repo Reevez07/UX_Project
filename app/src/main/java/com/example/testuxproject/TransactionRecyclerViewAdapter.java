@@ -35,8 +35,8 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
     public void onBindViewHolder(@NonNull TransactionRecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.itemName.setText(transactions.get(position).getItemName());
         holder.gameName.setText(transactions.get(position).getGameName());
-        holder.itemQty.setText(transactions.get(position).getQuantity());
-        holder.cost.setText(transactions.get(position).getItemPrice());
+        holder.itemQty.setText(transactions.get(position).getQuantity().toString());
+        holder.cost.setText(transactions.get(position).getItemPrice().toString());
     }
 
     @Override

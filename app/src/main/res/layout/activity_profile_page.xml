@@ -49,10 +49,10 @@
 
         <TextView
             android:id="@+id/userEmail"
-            android:layout_width="159dp"
-            android:layout_height="17dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="4dp"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="30dp"
             android:text="Jamesjordan@gmail.com"
             android:textAlignment="center"
@@ -111,7 +111,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:fontFamily="@font/poppins_bold"
-            android:text= "accbalance"
+            android:text= "2500"
             android:textColor="#ffffff"
             android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="@+id/container"
@@ -316,7 +316,6 @@
             app:layout_constraintHorizontal_bias="0.569"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-
             />
 
         <TextView
