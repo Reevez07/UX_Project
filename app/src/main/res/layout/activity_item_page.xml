@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/backBtn"
         android:layout_width="34dp"
         android:layout_height="33dp"
         android:layout_marginTop="28dp"
@@ -30,16 +30,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back" />
 
-    <ImageView
-        android:id="@+id/imageView4"
+    <ImageButton
+        android:id="@+id/button_menu"
         android:layout_width="41dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="25dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/menu_bg"
+        android:contentDescription="menu sidebar"
+        android:padding="5dp"
+        android:src="@drawable/ic_menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toStartOf="@+id/rectimage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_menu" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/gameIcon"
@@ -56,15 +58,14 @@
 
     <TextView
         android:id="@+id/gameName"
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="29dp"
         android:text="Valorant"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toEndOf="@+id/gameIcon"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,6 +1,8 @@
 package com.example.testuxproject;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,10 +34,16 @@ public class IG_RecyclerViewAdapter extends RecyclerView.Adapter<IG_RecyclerView
 
     @Override
     public void onBindViewHolder(@NonNull IG_RecyclerViewAdapter.MyViewHolder holder, int position) {
+        int size = 10;
+
+        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), itemGameModel.get(position).getItemGameImage());
+        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
+        originalBitmap.recycle();
+
         holder.textViewName.setText(itemGameModel.get(position).getItemGameName());
         holder.textViewShop.setText(itemGameModel.get(position).getItemGameShop());
         holder.textViewPrice.setText(itemGameModel.get(position).getItemGamePrice() + " Coins");
-        holder.imageView.setImageResource(itemGameModel.get(position).getItemGameImage());
+        holder.imageView.setImageBitmap(resized);
     }
 
     @Override
