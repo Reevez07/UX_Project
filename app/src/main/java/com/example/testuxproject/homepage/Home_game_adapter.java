@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.testuxproject.GlobalData;
 import com.example.testuxproject.R;
 
 import java.util.ArrayList;
@@ -42,16 +43,16 @@ public class Home_game_adapter extends RecyclerView.Adapter<Home_game_adapter.My
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         int size = 10;
 
-        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), games.get(position).getGameImage1());
-        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
-        originalBitmap.recycle();
+//        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), games.get(position).getGameImage1());
+//        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
+//        originalBitmap.recycle();
 
-        Bitmap image2 = BitmapFactory.decodeResource(context.getResources(), games.get(position).getGameImage2());
-        Bitmap resized2 = Bitmap.createScaledBitmap(image2, image2.getWidth() / size, image2.getHeight() / size, true);
-        image2.recycle();
+//        Bitmap image2 = BitmapFactory.decodeResource(context.getResources(), games.get(position).getGameImage2());
+//        Bitmap resized2 = Bitmap.createScaledBitmap(image2, image2.getWidth() / size, image2.getHeight() / size, true);
+//        image2.recycle();
 
-        holder.gameImage1.setImageBitmap(resized);
-        holder.gameImage2.setImageBitmap(resized2);
+        holder.gameImage1.setImageBitmap(GlobalData.decodeSampledBitmapFromResource(context.getResources(), games.get(position).getGameImage1(), 100, 100));
+        holder.gameImage2.setImageBitmap(GlobalData.decodeSampledBitmapFromResource(context.getResources(), games.get(position).getGameImage2(), 100, 100));
         holder.gameName.setText(games.get(position).getGameName());
         holder.gameGenre.setText(games.get(position).getGameGenre());
         holder.gameRating.setText(games.get(position).getGameRating().toString());

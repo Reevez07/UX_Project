@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.testuxproject.GlobalData;
 import com.example.testuxproject.R;
 import com.makeramen.roundedimageview.RoundedImageView;
 
@@ -35,9 +36,7 @@ public class Slide_adapter extends RecyclerView.Adapter<Slide_adapter.SlideViewH
         holder.setImage(slideItems.get(position));
         if (position == slideItems.size()-2){
             viewPager2.post(runnable);
-
         }
-
     }
 
     @Override
@@ -47,14 +46,16 @@ public class Slide_adapter extends RecyclerView.Adapter<Slide_adapter.SlideViewH
 
     class  SlideViewHolder extends RecyclerView.ViewHolder {
         private RoundedImageView imageView;
+        private View v;
 
         SlideViewHolder(@NonNull View itemView) {
             super(itemView);
+            v = itemView;
             imageView = itemView.findViewById(R.id.imageSlide);
         }
 
-        void setImage(Slideitem slideItem){
-            imageView.setImageResource(slideItem.getImage());
+        void setImage(Slideitem slideItem) {
+            imageView.setImageBitmap(GlobalData.decodeSampledBitmapFromResource(v.getResources(), slideItem.getImage(), 100, 100));
         }
     }
 

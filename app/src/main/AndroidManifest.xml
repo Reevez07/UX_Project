@@ -20,7 +20,7 @@
         <activity
             android:name=".homepage.HomePage"
             android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight">
+            android:theme="@style/Theme.MaterialComponents">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

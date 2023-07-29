@@ -38,16 +38,10 @@ public class IG_RecyclerViewAdapter extends RecyclerView.Adapter<IG_RecyclerView
 
     @Override
     public void onBindViewHolder(@NonNull IG_RecyclerViewAdapter.MyViewHolder holder, int position) {
-        int size = 10;
-
-        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), itemGameModel.get(position).getItemGameImage());
-        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
-        originalBitmap.recycle();
-
         holder.textViewName.setText(itemGameModel.get(position).getItemGameName());
         holder.textViewShop.setText(itemGameModel.get(position).getItemGameShop());
         holder.textViewPrice.setText(itemGameModel.get(position).getItemGamePrice() + " Coins");
-        holder.imageView.setImageBitmap(resized);
+        holder.imageView.setImageBitmap(GlobalData.decodeSampledBitmapFromResource(context.getResources(), itemGameModel.get(position).getItemGameImage(), 100, 100));
     }
 
     @Override
@@ -56,7 +50,6 @@ public class IG_RecyclerViewAdapter extends RecyclerView.Adapter<IG_RecyclerView
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-
         ImageView imageView;
         TextView textViewName, textViewShop, textViewPrice;
 

@@ -50,7 +50,6 @@ public class transaction extends Fragment implements HomeInterface {
     }
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

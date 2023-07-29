@@ -134,7 +134,7 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Button"
+                android:text="Buy"
                 app:backgroundTint="@color/hijauButton"
                 app:cornerRadius="15dp"
                 android:textColor="@color/white"

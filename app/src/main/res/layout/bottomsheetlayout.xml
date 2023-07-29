@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.MaterialComponents"
     android:background="@drawable/dialog_bg">
 
     <TextView
@@ -113,28 +112,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/StepperMinus"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"
                 android:background="@drawable/rounded_button"
-                android:padding="3dp"
+                android:padding="0dp"
+                android:paddingBottom="2dp"
                 android:text="-"
+                android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Quantity" />
 
             <TextView
                 android:id="@+id/StepperText"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="25dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
                 android:padding="3dp"
-                android:text="1"
+                android:text="2000000"
                 android:background="@drawable/steppercontainer"
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_semi_bold"
@@ -146,14 +147,14 @@
 
             <Button
                 android:id="@+id/StepperPlus"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"
                 android:background="@drawable/rounded_button"
-                android:padding="3dp"
+                android:padding="0dp"
                 android:text="+"
                 app:layout_constraintStart_toEndOf="@+id/StepperText"
                 app:layout_constraintTop_toBottomOf="@+id/Quantity" />

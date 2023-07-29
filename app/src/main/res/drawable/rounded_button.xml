@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-<!--    <solid android:color="@color/button_background_color" /> &lt;!&ndash; Change this color to your desired background color &ndash;&gt;-->
-    <stroke
-        android:width="2dp"
-        android:color="@color/white" />
-
-    <corners android:radius="1000dp" /> <!-- Adjust the radius to control the amount of rounding (16dp in this case) -->
+    <solid android:color="@color/hijauButton" />
+    <corners android:radius="1000dp" />
 </shape>

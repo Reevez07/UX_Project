@@ -31,13 +31,13 @@ import org.w3c.dom.Text;
 public class ProfilePage extends AppCompatActivity {
     Button submitBtn;
 
-//    declare variable
+    //    declare variable
     Integer account_balance = GlobalData.userBalance;
 
     ImageButton menuIcon;
     AnimatorSet slideDownAnimatorSet;
 
-//    ViewPager transactionContainer;
+    //    ViewPager transactionContainer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);

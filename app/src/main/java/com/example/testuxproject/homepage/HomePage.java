@@ -2,9 +2,11 @@ package com.example.testuxproject.homepage;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
@@ -27,6 +30,7 @@ import com.example.testuxproject.MainActivity;
 import com.example.testuxproject.ProfilePage;
 import com.example.testuxproject.R;
 import com.google.android.material.tabs.TabLayout;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +73,14 @@ public class HomePage extends AppCompatActivity {
         GlobalData.userName = userName;
         nameUser.setText(userName);
 
+        // profile image
+        RoundedImageView image = findViewById(R.id.profilepicture);
+
+        image.setOnClickListener(v-> {
+            Intent intent = new Intent(this, ProfilePage.class);
+            startActivity(intent);
+        });
+
 //        hamburger button
         menuIcon = findViewById(R.id.button_menu);
 
@@ -78,7 +90,7 @@ public class HomePage extends AppCompatActivity {
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                menuIcon.setImageResource(R.drawable.ic_baseline_close_24);
+//                menuIcon.setImageResource(R.drawable.ic_baseline_close_24);
                 showPopupMenu(view);
             }
         });
@@ -116,7 +128,7 @@ public class HomePage extends AppCompatActivity {
                 super.onPageSelected(position);
 
                 slideHandler.removeCallbacks(slideRunnable);
-                slideHandler.postDelayed(slideRunnable,2000);
+                slideHandler.postDelayed(slideRunnable,5000);
             }
         });
 
@@ -171,7 +183,9 @@ public class HomePage extends AppCompatActivity {
 
 //    dropdown
     private void showPopupMenu(View view) {
-        PopupMenu popupMenu = new PopupMenu(this, view, Gravity.END);
+        Context wrapper = new ContextThemeWrapper(this, R.style.MyToolbarStyle);
+        PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.END);
+//        popupMenu.setForceShowIcon(true);
         popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu_home, popupMenu.getMenu());
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -192,6 +206,7 @@ public class HomePage extends AppCompatActivity {
                         return false;
                 }
             }
+
         });
         slideDownAnimatorSet.start();
         popupMenu.show();
@@ -232,6 +247,6 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
-        slideHandler.postDelayed(slideRunnable, 3000);
+        slideHandler.postDelayed(slideRunnable, 5000);
     }
 }

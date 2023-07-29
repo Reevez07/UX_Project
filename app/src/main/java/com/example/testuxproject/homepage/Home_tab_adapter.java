@@ -28,6 +28,7 @@ public class Home_tab_adapter extends FragmentStateAdapter {
             case 3: return new fragment_console();
 
         }
+
         return new fragment_recommend();
     }
 

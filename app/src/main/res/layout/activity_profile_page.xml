@@ -6,6 +6,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProfilePage"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,11 +66,12 @@
             app:layout_constraintTop_toBottomOf="@+id/username"
             app:layout_constraintVertical_bias="0.026" />
 
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/profileimage"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/profileimage"
+            app:riv_corner_radius="100dp"
             app:layout_constraintBottom_toBottomOf="@+id/containertop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.517"
