@@ -28,6 +28,16 @@ public class GlobalData {
         return filtered;
     }
 
+    // filter by name
+    public static GameItems filterGameByName (String name) {
+        for (GameItems game: games) {
+            if (game.getGameName().equalsIgnoreCase(name)) {
+                return game;
+            }
+        }
+        return games.get(0);
+    }
+
 
     public static void init(){
         if (!games.isEmpty()) return;

@@ -1,10 +1,347 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dialogbackground">
+    android:theme="@style/Theme.MaterialComponents"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/BuyFormtxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buy Form"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
+            <TextView
+                android:id="@+id/FormLabelEmail"
+                android:layout_width="333dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="30dp"
+                android:text="Email"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="330dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/border_gradient_transparant"
+                android:hint="Please insert your email"
+                android:paddingStart="10dp"
+                android:textSize="14dp"
+                android:textColorHint="@color/white"
+                android:fontFamily="@font/poppins_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FormLabelEmail" />
+
+            <TextView
+                android:id="@+id/FormLabelUsername"
+                android:layout_width="331dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="Username"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+            <EditText
+                android:id="@+id/editTextUsername"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="30dp"
+                android:paddingStart="10dp"
+                android:textSize="14dp"
+                android:textColorHint="@color/white"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Please insert your username"
+                android:background="@drawable/border_gradient_transparant"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FormLabelUsername" />
+
+            <TextView
+                android:id="@+id/Quantity"
+                android:layout_width="331dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="Quantity"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+
+            <Button
+                android:id="@+id/StepperMinus"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button"
+                android:padding="3dp"
+                android:text="-"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Quantity" />
+
+            <TextView
+                android:id="@+id/StepperText"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:padding="3dp"
+                android:text="1"
+                android:background="@drawable/steppercontainer"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                app:layout_constraintStart_toEndOf="@+id/StepperMinus"
+                app:layout_constraintTop_toBottomOf="@+id/Quantity" />
+
+
+            <Button
+                android:id="@+id/StepperPlus"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button"
+                android:padding="3dp"
+                android:text="+"
+                app:layout_constraintStart_toEndOf="@+id/StepperText"
+                app:layout_constraintTop_toBottomOf="@+id/Quantity" />
+
+            <LinearLayout
+                android:id="@+id/GameNameLayout"
+                android:layout_width="333dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/StepperPlus">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/GameNameText"
+                        android:layout_width="151dp"
+                        android:layout_height="19dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:text="Game Name"
+                        android:fontFamily="@font/poppins_light"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.529" />
+
+                    <TextView
+                        android:id="@+id/GameNameValue"
+                        android:layout_width="151dp"
+                        android:layout_height="19dp"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:gravity="end"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.571" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GameNameLayout">
+
+                <LinearLayout
+                    android:id="@+id/AccBalanceLayout"
+                    android:layout_width="333dp"
+                    android:layout_height="34dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/AccBalanceText"
+                            android:layout_width="151dp"
+                            android:layout_height="19dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:text="Acc Balance"
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.529" />
+
+                        <TextView
+                            android:id="@+id/AccBalanceValue"
+                            android:layout_width="151dp"
+                            android:layout_height="19dp"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:gravity="end"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.571" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <LinearLayout
+                    android:id="@+id/TotalPaymentLayout"
+                    android:layout_width="333dp"
+                    android:layout_height="34dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/TotalPaymentText"
+                            android:layout_width="151dp"
+                            android:layout_height="19dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Total Payment"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.529" />
+
+                        <TextView
+                            android:id="@+id/TotalPaymentValue"
+                            android:layout_width="151dp"
+                            android:layout_height="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_bold"
+                            android:gravity="end"
+                            android:text="TextView"
+                            android:textColor="@color/blue_text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.571" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/PayButton"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Pay"
+                android:backgroundTint="@color/hijauButton"
+                app:cornerRadius="15dp"
+                android:textColor="@color/white"
+                app:rippleColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 </LinearLayout>

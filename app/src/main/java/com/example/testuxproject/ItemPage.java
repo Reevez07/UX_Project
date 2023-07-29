@@ -1,20 +1,23 @@
 package com.example.testuxproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.testuxproject.homepage.GameItems;
+import com.example.testuxproject.homepage.HomeInterface;
+
 import java.util.ArrayList;
 
-public class ItemPage extends AppCompatActivity {
+public class ItemPage extends AppCompatActivity implements HomeInterface {
 
-    ArrayList<ItemGameModel> Items;
+    ArrayList<ItemGameModel> items;
     String gameName;
     int gameIcon;
 
@@ -27,7 +30,7 @@ public class ItemPage extends AppCompatActivity {
         setContentView(R.layout.activity_item_page);
 
         // ngisi item ama game name ama game icon nya
-        Items = this.getIntent().getExtras().getParcelableArrayList("Items");
+        items = this.getIntent().getExtras().getParcelableArrayList("Items");
         gameName = this.getIntent().getExtras().getString("gameName");
         gameIcon = this.getIntent().getExtras().getInt("gameIcon");
 
@@ -41,9 +44,25 @@ public class ItemPage extends AppCompatActivity {
         // repeater
         RecyclerView recyclerView = findViewById(R.id.mRecyclerView);
 
-        IG_RecyclerViewAdapter adapter = new IG_RecyclerViewAdapter(this, Items);
+        IG_RecyclerViewAdapter adapter = new IG_RecyclerViewAdapter(this, items, this);
         recyclerView.setAdapter(adapter);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new androidx.recyclerview.widget.LinearLayoutManager(this));
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        ItemGameModel selectedItem = items.get(position);
+        GameItems game = GlobalData.filterGameByName(gameName);
+
+        Intent intent = new Intent(this, DetailPage.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("item", selectedItem);
+        bundle.putInt("gameWallpaper", game.getGameImage1());
+        bundle.putString("gameName", gameName);
+
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

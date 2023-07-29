@@ -31,5 +31,10 @@
         <item name="android:colorForeground">#42221f1f
         </item>
     </style>
+    
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@animator/slide_in</item>
+        <item name="android:windowExitAnimation">@animator/slide_out</item>
+    </style>
 
 </resources>

@@ -1,6 +1,8 @@
 package com.example.testuxproject;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +12,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.testuxproject.homepage.HomeInterface;
+
 import java.util.ArrayList;
 
 public class IG_RecyclerViewAdapter extends RecyclerView.Adapter<IG_RecyclerViewAdapter.MyViewHolder>{
     Context context;
     ArrayList<ItemGameModel> itemGameModel;
+    private final HomeInterface homeInterface;
 
-    public IG_RecyclerViewAdapter(Context context, ArrayList<ItemGameModel> itemGameModel) {
+    public IG_RecyclerViewAdapter(Context context, ArrayList<ItemGameModel> itemGameModel, HomeInterface hi) {
         this.context = context;
         this.itemGameModel = itemGameModel;
+        this.homeInterface = hi;
     }
 
     @NonNull
@@ -27,15 +33,21 @@ public class IG_RecyclerViewAdapter extends RecyclerView.Adapter<IG_RecyclerView
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_item, parent, false);
 
-        return new IG_RecyclerViewAdapter.MyViewHolder(view);
+        return new IG_RecyclerViewAdapter.MyViewHolder(view, homeInterface);
     }
 
     @Override
     public void onBindViewHolder(@NonNull IG_RecyclerViewAdapter.MyViewHolder holder, int position) {
+        int size = 10;
+
+        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), itemGameModel.get(position).getItemGameImage());
+        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
+        originalBitmap.recycle();
+
         holder.textViewName.setText(itemGameModel.get(position).getItemGameName());
         holder.textViewShop.setText(itemGameModel.get(position).getItemGameShop());
         holder.textViewPrice.setText(itemGameModel.get(position).getItemGamePrice() + " Coins");
-        holder.imageView.setImageResource(itemGameModel.get(position).getItemGameImage());
+        holder.imageView.setImageBitmap(resized);
     }
 
     @Override
@@ -48,13 +60,23 @@ public class IG_RecyclerViewAdapter extends RecyclerView.Adapter<IG_RecyclerView
         ImageView imageView;
         TextView textViewName, textViewShop, textViewPrice;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, HomeInterface homeInterface) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageItem);
             textViewName = itemView.findViewById(R.id.itemName);
             textViewShop = itemView.findViewById(R.id.itemShop);
             textViewPrice = itemView.findViewById(R.id.itemPrice);
+
+            itemView.setOnClickListener(view -> {
+                if (homeInterface != null) {
+                    int pos = getAdapterPosition();
+
+                    if (pos != RecyclerView.NO_POSITION) {
+                        homeInterface.onItemClick(pos);
+                    }
+                }
+            });
         }
     }
 }

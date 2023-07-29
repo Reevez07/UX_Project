@@ -14,7 +14,7 @@ public class ItemGameModel implements Parcelable {
     public String getItemGameDesc() {
         return  itemGameName + " is a remarkable game item that offers an " +
                 "incredible array of features and benefits to players in diverse gaming universes. With its exceptional qualities, this " +
-                "item has become a highly sought-after asset among gamers.\n" + "With " + itemGameName +
+                "item has become a highly sought-after asset among gamers.\n\n" + "With " + itemGameName +
                 " you can enjoy the benefits of a budget-friendly game item that still provides a valuable boost to your gaming experience with only "
                 + itemGamePrice + " coins, proving that you don't have to spend a fortune to have fun and succeed in the game.";
     }
