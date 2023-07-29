@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class ProfilePage extends AppCompatActivity {
 
+//    ViewPager transactionContainer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -19,6 +20,8 @@ public class ProfilePage extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
+
+
 
         ImageView back = findViewById(R.id.arrow_left);
         ImageView hamburger_btn = findViewById(R.id.hamburger_btn);

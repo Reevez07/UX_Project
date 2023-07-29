@@ -13,9 +13,10 @@
         android:layout_height="223dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008"
+        app:layout_constraintVertical_bias="0.007"
         app:srcCompat="@drawable/va_cash_logo2" />
 
     <TextView
@@ -31,13 +32,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.342" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="367dp"
-        android:layout_height="84dp"
+        android:layout_width="324dp"
+        android:layout_height="91dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
@@ -45,9 +46,6 @@
         android:textColorHint="#FFFFFF"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="#32B0A6"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:counterTextColor="@color/baseblue"
         app:endIconMode="clear_text"
         app:endIconTint="#FFFFFF"
         app:errorEnabled="true"
@@ -64,7 +62,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_txt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
             android:maxLength="21"
             android:textColor="#FAFAFA" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -72,8 +70,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="367dp"
-        android:layout_height="84dp"
+        android:layout_width="324dp"
+        android:layout_height="88dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="160dp"
         android:layout_marginEnd="32dp"
@@ -81,9 +79,6 @@
         android:textColorHint="#FFFFFF"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="#32B0A6"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:counterTextColor="@color/baseblue"
         app:endIconMode="password_toggle"
         app:errorEnabled="true"
         app:errorIconDrawable="@drawable/ic_error"
@@ -108,18 +103,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="50dp"
+        android:layout_width="282dp"
+        android:layout_height="44dp"
         android:layout_marginStart="24dp"
         android:orientation="horizontal"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.781">
+        app:layout_constraintVertical_bias="0.724">
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/reminder"
@@ -135,20 +130,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Remember Me"
             android:paddingLeft="20dp"
+            android:text="Remember Me"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <Button
         android:id="@+id/buttonToLogin"
-        android:layout_width="160dp"
-        android:layout_height="51dp"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
         android:backgroundTint="#118076"
         android:text="Log In"
+        android:fontFamily="@font/poppins_bold"
         android:textAllCaps="false"
         android:textSize="16sp"
-        app:cornerRadius="20dp"
+        android:textColor="@color/white"
+        app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"

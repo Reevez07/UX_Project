@@ -7,7 +7,7 @@
                 android:bottomLeftRadius="45dp"
                 android:bottomRightRadius="45dp"/>
             <size
-                android:height="200dp" />
+                android:height="150dp" />
         </shape>
     </item>
 </selector>

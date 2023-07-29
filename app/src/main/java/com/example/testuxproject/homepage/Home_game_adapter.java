@@ -57,19 +57,6 @@ public class Home_game_adapter extends RecyclerView.Adapter<Home_game_adapter.My
         holder.gameRating.setText(games.get(position).getGameRating().toString());
     }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-//        int size = 10;
-//        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), games.get(position).getGameIcon());
-//        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
-//        originalBitmap.recycle();
-//        holder.gameImage.setImageBitmap(resized);
-//
-//        holder.gameName.setText(games.get(position).getGameName());
-//        holder.gameDeveloper.setText(games.get(position).getGameDeveloper());
-//        holder.gameRating.setText(games.get(position).getRating().toString());
-//    }
-
     @Override
     public int getItemCount() {
         return games.size();

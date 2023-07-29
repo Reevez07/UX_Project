@@ -11,6 +11,10 @@ public class GlobalData {
     public static String userPassword = "12345678";
     public static String userName;
 
+    public static Integer userBalance = 2500;
+
+    public static ArrayList<TransactionModel> transactions = new ArrayList<>();
+
     public static ArrayList<GameItems> games = new ArrayList<>();
 
 //    filter
