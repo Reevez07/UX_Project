@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Button;
 
+import com.example.testuxproject.homepage.GameItems;
 import com.example.testuxproject.homepage.HomePage;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -110,6 +111,15 @@ public class DetailPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DetailPage.this, ItemPage.class);
+                Bundle bundle = new Bundle();
+
+                GameItems game = GlobalData.filterGameByName(gameName);
+
+                bundle.putParcelableArrayList("Items", game.getItems());
+                bundle.putString("gameName", game.getGameName());
+                bundle.putInt("gameIcon", game.getGameImage2());
+
+                intent.putExtras(bundle);
                 startActivity(intent);
                 finish();
             }
@@ -145,6 +155,8 @@ public class DetailPage extends AppCompatActivity {
         quantity = dialog.findViewById(R.id.StepperText);
         totalPrice = dialog.findViewById(R.id.TotalPaymentValue);
         qty = Integer.parseInt(quantity.getText().toString());
+
+        totalPrice.setText(item.getItemGamePrice());
 
         minus = dialog.findViewById(R.id.StepperMinus);
         plus = dialog.findViewById(R.id.StepperPlus);

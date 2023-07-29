@@ -88,7 +88,10 @@ public class ProfilePage extends AppCompatActivity {
                     ErrorMessage.setText("Top-up cannot be less than or equal to 0!");
                 } else{
                     isValid = true;
+                    ErrorMessage.setVisibility(View.INVISIBLE);
                     GlobalData.userBalance += Integer.parseInt(topup);
+                    countpurchased.setText(GlobalData.userBalance);
+                    TopUpVal.setText("0");
                 }
             }
         });
@@ -106,6 +109,8 @@ public class ProfilePage extends AppCompatActivity {
                 showPopupMenu(view);
             }
         });
+
+
     }
 
     private void navigateToLogout() {

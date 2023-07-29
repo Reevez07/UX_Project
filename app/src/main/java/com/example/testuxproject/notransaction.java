@@ -1,5 +1,6 @@
 package com.example.testuxproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.testuxproject.homepage.HomePage;
+import com.google.android.material.button.MaterialButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,9 +60,15 @@ public class notransaction extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notransaction, container, false);
+        View view = inflater.inflate(R.layout.fragment_notransaction, container, false);
+        MaterialButton homeButton = view.findViewById(R.id.buttonbackhome);
+
+        homeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(view.getContext(), HomePage.class);
+            startActivity(intent);
+        });
+        return view;
     }
 }

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<TransactionRecyclerViewAdapter.MyViewHolder>{
     Context context;
     ArrayList<TransactionModel> transactions;
-    private final HomeInterface homeInterface;
+    HomeInterface homeInterface;
 
     public TransactionRecyclerViewAdapter(Context context, ArrayList<TransactionModel> transactions, HomeInterface hi) {
         this.context = context;
@@ -28,7 +28,7 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
     public TransactionRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.profile_item_transaction, parent, false);
-        return new TransactionRecyclerViewAdapter.MyViewHolder(view);
+        return new TransactionRecyclerViewAdapter.MyViewHolder(view, homeInterface);
     }
 
     @Override
@@ -50,13 +50,23 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
         TextView itemQty;
         TextView cost;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, HomeInterface homeInterface) {
             super(itemView);
 
             itemName = itemView.findViewById(R.id.R_itemName);
             gameName = itemView.findViewById(R.id.R_game);
             itemQty = itemView.findViewById(R.id.R_itemQty);
             cost = itemView.findViewById(R.id.R_Cost);
+
+            itemView.setOnClickListener(view -> {
+                if (homeInterface != null) {
+                    int pos = getAdapterPosition();
+
+                    if (pos != RecyclerView.NO_POSITION) {
+                        homeInterface.onItemClick(pos);
+                    }
+                }
+            });
         }
     }
 

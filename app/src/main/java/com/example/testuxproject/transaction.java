@@ -78,11 +78,13 @@ public class transaction extends Fragment implements HomeInterface {
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), ItemPage.class);
+        TransactionModel selectedTransaction = GlobalData.transactions.get(position);
+        GameItems game = GlobalData.filterGameByName(selectedTransaction.gameName);
 
         Bundle bundle = new Bundle();
-//        bundle.putParcelableArrayList("Items", games.get(position).getItems());
-//        bundle.putString("gameName", games.get(position).getGameName());
-//        bundle.putInt("gameIcon", games.get(position).getGameImage2());
+        bundle.putParcelableArrayList("Items", game.getItems());
+        bundle.putString("gameName", game.getGameName());
+        bundle.putInt("gameIcon", game.getGameImage2());
 
         intent.putExtras(bundle);
         startActivity(intent);
