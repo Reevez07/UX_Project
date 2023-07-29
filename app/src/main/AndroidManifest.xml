@@ -21,16 +21,18 @@
             android:name=".homepage.HomePage"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents">
+
+        </activity>
+
+        <activity
+            android:name=".LoginPage"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".LoginPage"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents"/>
 
         <activity
             android:name=".MainActivity"

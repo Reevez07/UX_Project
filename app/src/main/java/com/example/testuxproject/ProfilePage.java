@@ -105,7 +105,7 @@ public class ProfilePage extends AppCompatActivity {
                     isValid = true;
                     ErrorMessage.setVisibility(View.INVISIBLE);
                     GlobalData.userBalance += Integer.parseInt(topup);
-                    countpurchased.setText(GlobalData.userBalance);
+                    balance.setText(GlobalData.userBalance.toString());
                     TopUpVal.setText("0");
                 }
             }
@@ -125,8 +125,6 @@ public class ProfilePage extends AppCompatActivity {
                 showPopupMenu(view);
             }
         });
-
-
     }
 
     //    dropdown
