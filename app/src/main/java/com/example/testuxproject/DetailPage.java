@@ -64,16 +64,11 @@ public class DetailPage extends AppCompatActivity {
 
         item = this.getIntent().getExtras().getParcelable("item");
         gameName = this.getIntent().getExtras().getString("gameName");
-        int gameWalpaper = this.getIntent().getExtras().getInt("gameWallpaper");
+        int gameWallpaper = this.getIntent().getExtras().getInt("gameWallpaper");
 
-        ImageView walpaper = findViewById(R.id.detailwallpaper);
-        int size = 5;
+        ImageView wallpaper = findViewById(R.id.detailwallpaper);
 
-        Bitmap originalBitmap = BitmapFactory.decodeResource(this.getResources(), gameWalpaper);
-        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
-        originalBitmap.recycle();
-
-        walpaper.setImageBitmap(resized);
+        wallpaper.setImageBitmap(GlobalData.decodeSampledBitmapFromResource(getResources(), gameWallpaper, 500, 500));
 
         ImageView itemImage = findViewById(R.id.imageItem);
         itemImage.setImageResource(item.getItemGameImage());
@@ -202,7 +197,7 @@ public class DetailPage extends AppCompatActivity {
                     showError("Account Balance is no sufficient");
                 } else {
                     GlobalData.userBalance = GlobalData.userBalance - qty * Integer.parseInt(item.getItemGamePrice());
-                    GlobalData.transactions.add(new TransactionModel(item.getItemGameName(), gameName, Integer.parseInt(item.getItemGamePrice()), qty));
+                    GlobalData.transactions.add(new TransactionModel(item.getItemGameName(), gameName, Integer.parseInt(item.getItemGamePrice()) * qty, qty));
                     Intent intent = new Intent(DetailPage.this, ProfilePage.class);
                     startActivity(intent);
                 }
