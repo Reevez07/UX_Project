@@ -59,5 +59,7 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
             cost = itemView.findViewById(R.id.R_Cost);
         }
     }
+
+
 }
 
