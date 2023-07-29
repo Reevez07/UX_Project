@@ -162,7 +162,7 @@ public class ProfilePage extends AppCompatActivity {
     }
 
     private void navigateToLogout() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 

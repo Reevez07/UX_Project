@@ -144,7 +144,7 @@ public class ItemPage extends AppCompatActivity implements HomeInterface {
     }
 
     private void navigateToLogout() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 

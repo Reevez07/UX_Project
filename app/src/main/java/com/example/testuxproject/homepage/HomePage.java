@@ -26,6 +26,7 @@ import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.testuxproject.GlobalData;
+import com.example.testuxproject.LoginPage;
 import com.example.testuxproject.MainActivity;
 import com.example.testuxproject.ProfilePage;
 import com.example.testuxproject.R;
@@ -216,7 +217,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     private void navigateToLogout() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 
