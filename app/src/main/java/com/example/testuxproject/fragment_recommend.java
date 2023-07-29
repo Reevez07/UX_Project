@@ -86,6 +86,8 @@ public class fragment_recommend extends Fragment implements HomeInterface {
 //        function pindah page
         Intent intent = new Intent(getActivity(), ItemPage.class);
 
+        System.out.println(games.get(position));
+
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("Items", games.get(position).getItems());
         bundle.putString("gameName", games.get(position).getGameName());
