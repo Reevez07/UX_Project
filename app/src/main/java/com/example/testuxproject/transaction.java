@@ -81,6 +81,8 @@ public class transaction extends Fragment implements HomeInterface {
         TransactionModel selectedTransaction = GlobalData.transactions.get(position);
         GameItems game = GlobalData.filterGameByName(selectedTransaction.gameName);
 
+//        String concat = game.getItems() +
+
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("Items", game.getItems());
         bundle.putString("gameName", game.getGameName());

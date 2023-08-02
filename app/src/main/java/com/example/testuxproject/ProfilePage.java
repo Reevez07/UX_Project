@@ -118,6 +118,7 @@ public class ProfilePage extends AppCompatActivity {
         slideDownAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.slide_down);
         slideDownAnimatorSet.setTarget(R.menu.dropdown_menu_home);
 
+
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

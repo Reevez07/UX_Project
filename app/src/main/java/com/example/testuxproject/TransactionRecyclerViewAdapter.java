@@ -33,9 +33,9 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
 
     @Override
     public void onBindViewHolder(@NonNull TransactionRecyclerViewAdapter.MyViewHolder holder, int position) {
-        holder.itemName.setText(transactions.get(position).getItemName());
+//        holder.itemName.setText(transactions.get(position).getItemName());
         holder.gameName.setText(transactions.get(position).getGameName());
-        holder.itemQty.setText(transactions.get(position).getQuantity().toString());
+        holder.itemQty.setText(transactions.get(position).getItemName().toString() + " - " + transactions.get(position).getQuantity().toString());
         holder.cost.setText(transactions.get(position).getItemPrice().toString());
     }
 
@@ -53,7 +53,7 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
         public MyViewHolder(@NonNull View itemView, HomeInterface homeInterface) {
             super(itemView);
 
-            itemName = itemView.findViewById(R.id.R_itemName);
+//            itemName = itemView.findViewById(R.id.R_itemName);
             gameName = itemView.findViewById(R.id.R_game);
             itemQty = itemView.findViewById(R.id.R_itemQty);
             cost = itemView.findViewById(R.id.R_Cost);
