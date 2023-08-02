@@ -68,6 +68,7 @@ public class LoginPage extends AppCompatActivity {
                     error_password.setVisibility(View.VISIBLE);
                 }else if(password.length() < 8){
                     isValid = false;
+                    error_email.setVisibility(View.INVISIBLE);
                     error_password.setText("Password must contain at least 8 characters");
                     error_password.setVisibility(View.VISIBLE);
                 }
