@@ -30,6 +30,7 @@ public class LoginPage extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_login_page);
 
+
         TextInputLayout layoutPassword = findViewById(R.id.passwordInputLayout);
         TextInputLayout layoutEmail = findViewById(R.id.emailInputLayout);
         TextInputEditText password_txt = findViewById(R.id.password_txt);
@@ -37,6 +38,7 @@ public class LoginPage extends AppCompatActivity {
         Button buttonToLogin = findViewById(R.id.buttonToLogin);
         TextView error_email = findViewById(R.id.errorEmail);
         TextView error_password = findViewById(R.id.errorPassword_txt);
+
 
         buttonToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +79,6 @@ public class LoginPage extends AppCompatActivity {
                 }
 
                 if (isValid) {
-                    // Validations successful, proceed to the next activity
                     Intent intent = new Intent(LoginPage.this, HomePage.class);
                     startActivity(intent);
                 }
