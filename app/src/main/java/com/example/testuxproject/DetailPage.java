@@ -133,8 +133,6 @@ public class DetailPage extends AppCompatActivity {
 
 
 //        GameName and accBalance
-        TextView name =  dialog.findViewById(R.id.GameNameText);
-        name.setText(gameName);
 
         TextView balance =  dialog.findViewById(R.id.AccBalanceValue);
         balance.setText(accbalance.toString());
@@ -194,7 +192,7 @@ public class DetailPage extends AppCompatActivity {
                 } else if (qty <= 0) {
                     showError("Quantity must be more than 0!");
                 } else if (GlobalData.userBalance < qty * Integer.parseInt(item.getItemGamePrice())){
-                    showError("Account Balance is no sufficient");
+                    showError("Account Balance is not sufficient!");
                 } else {
                     GlobalData.userBalance = GlobalData.userBalance - qty * Integer.parseInt(item.getItemGamePrice());
                     GlobalData.transactions.add(new TransactionModel(item.getItemGameName(), gameName, Integer.parseInt(item.getItemGamePrice()) * qty, qty));
